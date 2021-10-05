@@ -19,5 +19,9 @@ my_dict['박찬욱'] = '아가씨'
 print(my_dict)
 
 # CRUD .. Delete
-del my_dict['김기덕']
+if len(my_dict['김기덕']) >= 5:
+    del my_dict['김기덕']
+else:
+    del my_dict['박찬욱']
+
 print(my_dict)

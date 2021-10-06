@@ -8,17 +8,23 @@ def cube(number):
     return number ** 3
 
 
-def by_three(number=0):
+def by_three(number1=0, number2=0, number3=0):
     """
     by_three 라는 두 번째 함수를 만들고 number 라는 파라미터를 받는다.
     그 숫자가 3으로 나누어지면 cube함수를 호출해서 결과를 넘겨주고, 그렇지 않으면 False 를 리턴한다.
-    :param number:
+    :param number1:
+    :param number2:
     :return:
     """
-    if number % 3 == 0:
-        return cube(number)
+    if number1 % 3 == 0:
+        return cube(number1 + number2)
     else:
         return False
 
 
-print(by_three(number=8767868768))
+def main():
+    print(by_three(number3=5))
+
+
+if __name__ == '__main__':
+    main()

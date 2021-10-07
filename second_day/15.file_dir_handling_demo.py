@@ -6,15 +6,15 @@ import shutil
 
 
 def main():
-    os.chdir('/Users/soongonkim/Desktop/py-automation')
+    os.chdir('/')
     try:
-        os.mkdir('test')
+        os.mkdir('../test')
     except FileExistsError:
         pass
 
     file_list = glob.glob('00.*')
     for file in file_list:
-        shutil.copy(file, './test')
+        shutil.copy(file, '../test')
         print('copy completed..')
 
     print('job completed..')

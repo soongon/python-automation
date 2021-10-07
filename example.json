@@ -1,0 +1,38 @@
+[
+{
+  "id": 1,
+  "title": "hello",
+  "content": "sldkfjlskdfjdsklfjs",
+  "author": "kim",
+  "tags": ["인사", "좋은날", "일기", "비온다"],
+  "likes": 52,
+  "replys": [
+    {
+      "author": "lee",
+      "content": "밥먹엇니?"
+    },
+    {
+      "author": "park",
+      "content": "좋은하루 보내세요"
+    }
+  ]
+},
+{
+  "id": 1,
+  "title": "hello",
+  "content": "sldkfjlskdfjdsklfjs",
+  "author": "kim",
+  "tags": ["인사", "좋은날", "일기", "비온다"],
+  "likes": 52,
+  "replys": [
+    {
+      "author": "lee",
+      "content": "밥먹엇니?"
+    },
+    {
+      "author": "park",
+      "content": "좋은하루 보내세요"
+    }
+  ]
+}
+]

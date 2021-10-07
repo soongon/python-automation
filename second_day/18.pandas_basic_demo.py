@@ -1,7 +1,7 @@
 import pandas as pd
 
 # csv 파일 읽기
-df = pd.read_csv('./data/salaries_backup.csv')
+df = pd.read_csv('../data/salaries_backup.csv')
 
 # 1. 필터링 -- 내셔널리그의 선수연봉 데이터만 필터링
 # df = df.loc[df['lgID'] == 'NL']

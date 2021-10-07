@@ -1,7 +1,7 @@
 import openpyxl
 
 # 엑셀파일을 오픈
-workbook = openpyxl.load_workbook('./data/result_salaries_excel.xlsx')
+workbook = openpyxl.load_workbook('../data/result_salaries_excel.xlsx')
 # 액티브 시트를 확보
 active_sheet = workbook['Sheet1']
 # F2 셀에 값을 읽기

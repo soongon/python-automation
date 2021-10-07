@@ -1,4 +1,4 @@
-file = open('./data/zen_of_python.txt', 'r')
+file = open('../data/zen_of_python.txt', 'r')
 
 lines = file.readlines()
 

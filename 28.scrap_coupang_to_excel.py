@@ -25,13 +25,21 @@ def get_product_list_with_page_number(page_number):
     products = []
 
     for li in lists:
+        image_url = 'https:' + li.select_one('a > dl > dt > img')['src']
         products.append([
             li.select_one('a > dl > dd > div.name').text.strip(),
             int(li.select_one('a > dl > dd > div.price-area > div > div.price > em > strong').text.replace(',', '')),
             int(li.select_one('a > dl > dd > div.other-info > div > span.rating-total-count').text[1:-1]),
-            'https:' + li.select_one('a > dl > dt > img')['src']
+            image_url
         ])
+        save_image_to(image_url)
     return products
+
+
+def save_image_to(url):
+    res = requests.get(url)
+    with open('./images/' + url.split('/')[-1], 'wb') as f:
+        f.write(res.content)
 
 
 def main():

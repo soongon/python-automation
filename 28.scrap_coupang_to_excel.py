@@ -15,8 +15,9 @@ def get_header():
     }
 
 
-def main():
-    res = requests.get('https://www.coupang.com/np/campaigns/82/components/194176', headers=get_header())
+def get_product_list_with_page_number(page_number):
+    page_url = 'https://www.coupang.com/np/campaigns/82/components/194176?page=' + str(page_number)
+    res = requests.get(page_url, headers=get_header())
     soup = BeautifulSoup(res.text, 'html.parser')
 
     lists = soup.select('#productList > li')
@@ -30,6 +31,17 @@ def main():
             int(li.select_one('a > dl > dd > div.other-info > div > span.rating-total-count').text[1:-1]),
             'https:' + li.select_one('a > dl > dt > img')['src']
         ])
+    return products
+
+
+def main():
+    products = []
+    for page_number in range(1, 1000):
+        page_products = get_product_list_with_page_number(page_number)
+        if len(page_products) == 0:
+            break
+        products += page_products
+        print(str(page_number) + '페이지 스크립팅 완료..')
 
     save_to_excel(products)
 
